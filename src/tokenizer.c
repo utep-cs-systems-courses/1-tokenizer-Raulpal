@@ -66,16 +66,13 @@ char *word_terminator(char *word)
 
 {
 
-  if( *(word) == '\0' || space_char(*word)== 1)
-
-    return word-=1;
-
-  else if( *(word+1) == '\0')
-
-    return word-=1;
-
-  return (word_terminator((word + 1)));
-
+  while(*word != '\0')
+    {
+      if(space_char(*word) == 1)
+	 word++;
+      word+=1;
+    }
+    return word;
 }
 
 
@@ -96,10 +93,17 @@ int count_words(char *str)
 
   char *first_char = word_start(str);
 
-  char *last_char = word_terminator(first_char) + 1;
+  char *last_char = word_terminator(first_char);
 
   printf("first letter is: %c and last letter is: %c\n", *first_char, *(last_char-1));
 
   return 1 + count_words(last_char + 1 );
+}
+
+char *str_copy(char *instr,short len)
+{
+  
+ 
+
 
 }
