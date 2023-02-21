@@ -21,6 +21,9 @@ int main()
   printf("end of word is: %c\n", *(word_terminator(&str[0])-1));
 
   printf("word is: %d long\n", count_words(&str[0]));
+
+  tokenize(&str[0]);
+
   fflush(stdin);
 
   return 0;
