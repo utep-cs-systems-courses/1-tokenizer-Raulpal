@@ -136,9 +136,9 @@ char * str_copy(char *instr, short len)
 
 char **tokenize(char* str)
 {
-  int length = count_words(str);
+  int length = count_words(str) + 1;
 
-  char **token_vector = malloc(sizeof(char)* length);
+  char **token_vector = malloc(sizeof(char*)* length);
   
   printf("%d\n", length);
 
@@ -157,6 +157,8 @@ char **tokenize(char* str)
       str = last_letter;
 
     }
+  *(token_vector + length) = NULL;
+  
   return token_vector;
 }
 
@@ -165,7 +167,7 @@ char **tokenize(char* str)
 
 void print_tokens(char **tokens)
 {
-  while(tokens)
+  while(*tokens)
 
     {
 
