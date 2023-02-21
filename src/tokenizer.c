@@ -97,8 +97,6 @@ int count_words(char *str)
 
   char *last_char = word_terminator(first_char);
 
-  printf("first letter is: %c and last letter is: %c\n", *first_char, *(last_char-1));
-
   return 1 + count_words(last_char + 1 );
 }
 
