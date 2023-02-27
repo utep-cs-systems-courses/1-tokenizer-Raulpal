@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlin.h>
+#include <stdlib.h>
 #include "history.h"
 #include "tokenizer.h"
 
@@ -15,7 +15,7 @@ int main()
 
   // for history list (linked list)
 
-  List *history = inint_history();
+  List *history = init_history();
   int id_identifier;
   char sequence_command[MAX];
 
@@ -45,7 +45,7 @@ int main()
 
 	  add_history(history, str);
 
-	  free_tokens(token_vector);
+	  // free_tokens(token_vector);
 
 	  break;
 	  
@@ -70,7 +70,7 @@ int main()
 	case '4':
 	  fflush(stdin);
 
-	  goto done:
+	  goto done;
 	 
 	default:
 	  printf("PLease select a valid option\n");
@@ -84,7 +84,7 @@ int main()
 
   free_history(history);
 
-  printf("You exited the program! Goodbye");
+  printf("You exited the program! Goodbye!");
   return 0;
   
 
