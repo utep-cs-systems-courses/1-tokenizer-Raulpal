@@ -168,11 +168,23 @@ char **tokenize(char* str)
 void print_tokens(char **tokens)
 {
   while(*tokens)
-
     {
-
       printf("%s\n", *tokens);
 
       tokens +=1;
     }
+}
+
+
+/* Prints all tokens. */
+
+void free_tokens(char **tokens)
+{
+  for(int i = 0; *(tokens + i); i++)
+    {
+      free(*(tokens + i));
+    }
+  free(tokens);
+
+  printf("Tokens were freed\n");
 }
