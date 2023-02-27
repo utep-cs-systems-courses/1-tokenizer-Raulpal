@@ -97,7 +97,7 @@ char *get_history(List *list, int id)
       if(current_Node->id == id)
 	{
 
-	  printf("id (%d) found and corresponding string is (%s)\n", current_Node->id, current_Node->str);
+	  printf("ID (%d) found and corresponding string is (%s)\n", current_Node->id, current_Node->str);
 	  return current_Node->str;
 
 	}
